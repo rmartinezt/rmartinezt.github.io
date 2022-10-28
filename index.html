@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Crash goal launcher</title>
+    </head>
+    <body>
+        <h1>Crash Goal Launcher</h1>
+        <div id="main">
+            <label for="playerid">Player ID:</label>
+            <input type="text" name="playerid" id="playerid" required/>
+            <button type="button" onclick="launch()">Launch game</button>
+        </div>
+        <script type="text/javascript">
+            function launch() {
+                const playerId = document.getElementById("playerid").value
+
+                const url = `https://bucket-pre.3cherry.com/slotCrash/gameWeb.html?partner=triplergs_test&tokenInQuery=true&playerid=${playerId}&sessiontoken=3cherrydummytoken-${playerId}&casino=triplergs_test_pre&integration=dummy`
+
+                window.location.assign(url)
+            }
+        </script>
+    </body>
+</html>
