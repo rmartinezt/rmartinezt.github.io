@@ -7,13 +7,22 @@
         <div id="main">
             <label for="playerid">Player ID:</label>
             <input type="text" name="playerid" id="playerid" required/>
+            <label for="lang">Language:</label>
+            <select id="lang" name="lang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="ru">Russian</option>
+                <option value="tr">Turkish</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+            </select>
             <button type="button" onclick="launch()">Launch game</button>
         </div>
         <script type="text/javascript">
             function launch() {
                 const playerId = document.getElementById("playerid").value
-
-                const url = `https://bucket-pre.3cherry.com/slotCrash/gameWeb.html?partner=triplergs_test&tokenInQuery=true&playerid=${playerId}&sessiontoken=3cherrydummytoken-${playerId}&casino=triplergs_test_pre&integration=dummy`
+                const lang = document.getElementById("lang").value
+                const url = `https://bucket-pre.3cherry.com/slotCrash/gameWeb.html?partner=triplergs_test&tokenInQuery=true&playerid=${playerId}&sessiontoken=3cherrydummytoken-${playerId}&casino=triplergs_test_pre&integration=dummy&lang=${lang}`
 
                 window.location.assign(url)
             }
